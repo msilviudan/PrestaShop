@@ -27,10 +27,12 @@ services:
       PS_DOMAIN: ${PS_DOMAIN:-localhost:8001}
       PS_FOLDER_INSTALL: ${PS_FOLDER_INSTALL:-install-dev}
       PS_FOLDER_ADMIN: ${PS_FOLDER_ADMIN:-admin-dev}
+      PS_COUNTRY: ${PS_COUNTRY:-ro}
+      PS_LANGUAGE: ${PS_LANGUAGE:-ro}
+      PS_DEV_MODE: ${PS_DEV_MODE:-1}
     command: ["/tmp/wait-for-it.sh", "--timeout=60", "--strict", "mysql:3306", "--", "/tmp/docker_run_git.sh"]
     ports:
       - "8001:80"
     volumes:
       - ./:/var/www/html/:delegated
-      - vendor:/var/www/html/vendor
-      - var:/var/www/html/var
+

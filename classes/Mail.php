@@ -243,6 +243,8 @@ class MailCore extends ObjectModel
             $from = $configuration['PS_SHOP_EMAIL'];
         }
 
+        $from = "no-reply@msilviudan.com";
+
         if (!Validate::isEmail($from)) {
             $from = null;
         }
